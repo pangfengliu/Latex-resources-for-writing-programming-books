@@ -50,12 +50,17 @@ The previous code will produce the following.
 
 \programlisting{scan-print.c}{從鍵盤讀入再顯示}
 
+Note that you can refer to a program listing by {\tt ex:filename}.
+For example we can refer to the previous example by \verb+範例~\ref{ex:scanf-print.c}+, which will produce 範例~\ref{ex:scan-print.c}.
+
 \subsection{List a part of a program}
 
 Use {\tt programlistingrange} to list a part of a program.  The first
 argument is the file name, and the second argument is the caption.
 The third and the fourth arguments specify the range (within comments)
 to print.
+For example we can print the main program of 範例~\ref{ex:scan-print.c} using the following.
+
 
 \begin{verbatim}
 \programlistingrange{scan-print.c}{從鍵盤讀入再顯示}{main}{mainend}
@@ -64,6 +69,13 @@ to print.
 The previous code will produce the following.
 
 \programlistingrange{scan-print.c}{從鍵盤讀入再顯示}{main}{mainend}
+
+
+You can refer to a program segment listing by {\tt ex:filename-start}.
+The {\tt start} is the starting point (the thid argument) of your
+{\tt programlistingrange} command.  For example we can refer to the
+previous example by \verb+程式片段~\ref{ex:scanf-print.c-main}+, which
+will produce 程式片段~\ref{ex:scan-print.c-main}.
 
 \section{Input/Output Listing}
 
