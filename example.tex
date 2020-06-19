@@ -16,12 +16,48 @@
 
 \chapter{Examples}
 
-Use {\tt programlisting} to list a program.
+{\tt programmingbook} is a package that I use to write programming books.
+It requires listing package and you can use it to write books in Chinese (with {\tt CJK}).
+The latex source will look like this.
 
-\programlisting{scan-print}{從鍵盤讀入一整數再將其顯示在螢幕上}
+\begin{verbatim}
+\documentclass[11pt,twoside]{book}
+
+\usepackage{CJK}
+\usepackage{programmingbook}
+
+\begin{document}
+\begin{CJK}{UTF8}{bsmi}
+% your book here.
+\end{CJK}
+\end{document}
+\end{verbatim}
+
+\section{Program Listing}
+
+Use {\tt programlisting} to list a program.
+The first argument is the file name, and the second argument is the caption.
+
+\begin{verbatim}
+\programlisting{scan-print.c}{從鍵盤讀入再將其顯示}
+\end{verbatim}
+
+The previous code will produce the following.
+
+\programlisting{scan-print.c}{從鍵盤讀入再將其顯示}
+
+\section{Input/Output Listing}
 
 Use {\tt programinput} and {\tt programoutput} to list program input
-  and output.
+and output.
+Note that we use {\tt file.in} and {\tt file.out} as the default file names to print if given the name {\tt file}.
+
+\begin{verbatim}
+\programinput{scan-print}
+\programoutput{scan-print}
+\end{verbatim}
+
+The previous code will produce the following.
 
 \programinput{scan-print}
 \programoutput{scan-print}
