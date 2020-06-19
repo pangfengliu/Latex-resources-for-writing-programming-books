@@ -1,4 +1,6 @@
 \documentclass[11pt,twoside]{book}
+\setlength{\oddsidemargin}{0.58in}
+\setlength{\evensidemargin}{0.58in}
 
 \usepackage{CJK}
 \usepackage{programmingbook}
@@ -35,16 +37,33 @@ The latex source will look like this.
 
 \section{Program Listing}
 
+\subsection{List the entire program}
+
 Use {\tt programlisting} to list a program.
 The first argument is the file name, and the second argument is the caption.
 
 \begin{verbatim}
-\programlisting{scan-print.c}{從鍵盤讀入再將其顯示}
+\programlisting{scan-print.c}{從鍵盤讀入再顯示}
 \end{verbatim}
 
 The previous code will produce the following.
 
-\programlisting{scan-print.c}{從鍵盤讀入再將其顯示}
+\programlisting{scan-print.c}{從鍵盤讀入再顯示}
+
+\subsection{List a part of a program}
+
+Use {\tt programlistingrange} to list a part of a program.  The first
+argument is the file name, and the second argument is the caption.
+The third and the fourth arguments specify the range (within comments)
+to print.
+
+\begin{verbatim}
+\programlistingrange{scan-print.c}{從鍵盤讀入再顯示}{main}{mainend}
+\end{verbatim}
+
+The previous code will produce the following.
+
+\programlistingrange{scan-print.c}{從鍵盤讀入再顯示}{main}{mainend}
 
 \section{Input/Output Listing}
 
