@@ -1,0 +1,30 @@
+\documentclass[11pt,twoside]{book}
+
+\usepackage{CJK}
+\usepackage{programmingbook}
+
+\begin{document}
+
+\begin{CJK}{UTF8}{bsmi}
+  
+\title{Latex Resources for Writing Programming Books}
+\author{劉邦鋒 \\ 臺灣大學資訊工程學系}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\chapter{Examples}
+
+Use {\tt programlisting} to list a program.
+
+\programlisting{scan-print}{從鍵盤讀入一整數再將其顯示在螢幕上}
+
+Use {\tt programinput} and {\tt programoutput} to list program input
+  and output.
+
+\programinput{scan-print}
+\programoutput{scan-print}
+
+\end{CJK}
+\end{document}

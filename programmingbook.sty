@@ -1,0 +1,140 @@
+% this a package for my C programming book
+% 
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{mycprogramming}
+                [2018/08/30 v0.01 LaTeX package for my C programming book]
+
+\RequirePackage{graphics,listings,CJK,verbatim,adjustbox}
+\def\hi{LaTeX package for my C programming book}
+
+% new theorem like environment in the book
+
+\begin{CJK}{UTF8}{bsmi}
+\newtheorem{keypoint}{學習要點}[chapter]
+\newtheorem{style}{風格要點}[chapter]
+\newtheorem{specialchar}{特殊字元}[chapter]
+\end{CJK}
+
+% list environment gloabal setting
+
+\lstset{showstringspaces=false}
+\lstset{language=C}
+\lstset{basicstyle=\ttfamily}
+\lstset{keywordstyle=\ttfamily\bfseries}
+\lstset{numbers=left}
+\lstset{xleftmargin=4ex}
+\lstset{xrightmargin=1ex}
+\lstset{breaklines=true}
+\lstset{aboveskip=2ex}
+\lstset{rangeprefix=\/*\ }
+\lstset{rangesuffix=\ *\/}
+\lstset{includerangemarker=false}
+\lstset{morekeywords={IF,STOP,int,void,bool,assert,int8_t,int16_t,int32_t,int64_t,uint8_t,uint16_t,uint32_t,uint64_t}}
+\lstset{float=h}
+
+% \boxedlisting
+% macro for boxed listing WITHOUT label
+% [1] is the title [2] is the file
+\newcommand{\boxedlisting}[2]
+{{\lstset{frame=single}\lstinputlisting[title={#1}]{#2}}}
+
+% \programlisting
+% Macro for program listing
+% [1] is the filename, [2] is the description
+
+\newcommand{\programlisting}[2]
+{\renewcommand{\lstlistingname}{\bf 範例}
+\lstinputlisting[label=ex:#1, caption={({\tt #1.c}) #2}]{#1.c}}
+
+% \programlistingrange
+% macro for program listing (within a range)
+% [1] is the filename, [2] is the description
+% [3] and [4] are the starting and end comment label 
+
+\newcommand{\programlistingrange}[4]
+{\renewcommand{\lstlistingname}{\bf 程式片段}
+\lstinputlisting[linerange={#3}-{#4}, label=ex:#1-#3, caption={({\tt #1.c}) #2}]{#1.c}}
+
+% \programoutput
+% macro for program output
+% [1] is the output file name (.out)
+
+\newcommand{\programoutput}[1]
+{\boxedlisting{\bf 輸出} {#1.out}}
+
+% \programinput
+% macro for program input
+% [1] is the input file name (.in)
+\newcommand{\programinput}[1]
+{\boxedlisting{\bf 輸入} {#1.in}}
+
+% \commandline
+% macro for command line
+% [1] is the filename, [2] is the description
+\newcommand{\commandline}[2]
+{{\renewcommand{\lstlistingname}{\bf 命令列}
+\lstset{frame=single,label=command:#1,caption={#2}}
+\lstinputlisting{#1.sh}}}
+
+% \header
+% macro for header file
+% [1] is the filename, [2] is the description
+\newcommand{\header}[2]
+{{\renewcommand{\lstlistingname}{\bf 標頭檔}
+\lstset{label=header:#1,caption={({\tt #1.h}) #2}}
+\lstinputlisting{#1.h}}}
+
+% \prototype
+% macro for prototype
+% [1] is the filename, [2] is the description
+\newcommand{\prototype}[1]
+{{\renewcommand{\lstlistingname}{\bf 函式原型}
+\lstset{frame=single,label=prototype:#1,caption={({\tt #1})}}
+\lstinputlisting{#1.h}}}
+
+% \phrase
+% macro for phrase
+% [1] is the phrase, [2] is the description
+\newcommand{\phrase}[2]
+{{\renewcommand{\lstlistingname}{\bf 片語}
+\lstset{frame=single,label=phr:#1,caption={#2}}
+\lstinputlisting{#1.p}}}
+
+% \out
+% macro for displaying execution result in verbatim format
+% in a figure (not program listing)
+% [1] is the filename (without .out), [2] is the description
+\newcommand{\out}[2]
+           {
+             \begin{figure}[htb]
+               \renewcommand{\figurename}{執行結果}
+               \verbatiminput{#1.out}
+               \caption{#2}\label{out:#1}
+             \end{figure}
+           }
+
+
+% Macro for including pdf
+% [1] is the size in \textwidth [2] is the pdf filename
+\newcommand{\includepdf}[2]
+{\centerline{\includegraphics[width=#1\textwidth]{#2.pdf}}}
+
+% \includetikz
+% include a tikz figure
+% [1] is the filename
+% use the original size (no adjustbox like in slides)
+\newcommand{\includetikz}[1]
+{\center{\input{#1.tikz}}}
+
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand{\bibname}{{\bf{徵引書目}}}
+
+% \newcommand{\comment}[1]{}
+\newcommand{\bookonly}[1]{#1}   % only in book
+\newcommand{\bookslide}[2]{#1}   % in book or slide
+
+\endinput
+%%
+%% End of file `mypackage.sty'.
