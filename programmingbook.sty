@@ -83,8 +83,8 @@
 % [1] is the filename, [2] is the description
 \newcommand{\header}[2]
 {{\renewcommand{\lstlistingname}{\bf 標頭檔}
-\lstset{label=header:#1,caption={({\tt #1.h}) #2}}
-\lstinputlisting{#1.h}}}
+\lstset{label=header:#1,caption={({\tt #1}) #2}}
+\lstinputlisting{#1}}}
 
 % \prototype
 % macro for prototype
@@ -92,7 +92,7 @@
 \newcommand{\prototype}[1]
 {{\renewcommand{\lstlistingname}{\bf 函式原型}
 \lstset{frame=single,label=prototype:#1,caption={({\tt #1})}}
-\lstinputlisting{#1.h}}}
+\lstinputlisting{#1}}}
 
 % \phrase
 % macro for phrase

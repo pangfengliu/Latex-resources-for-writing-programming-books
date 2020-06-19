@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside]{book}
+\documentclass[11pt]{report}
 \setlength{\oddsidemargin}{0.58in}
 \setlength{\evensidemargin}{0.58in}
 
@@ -74,7 +74,7 @@ The previous code will produce the following.
 You can refer to a program segment listing by {\tt ex:filename-start}.
 The {\tt start} is the starting point (the thid argument) of your
 {\tt programlistingrange} command.  For example we can refer to the
-previous example by \verb+程式片段~\ref{ex:scanf-print.c-main}+, which
+previous example by \verb+程式片段~\ref{ex:scan-print.c-main}+, which
 will produce 程式片段~\ref{ex:scan-print.c-main}.
 
 \section{Input/Output Listing}
@@ -92,6 +92,25 @@ The previous code will produce the following.
 
 \programinput{scan-print}
 \programoutput{scan-print}
+
+
+\section{Headers and Prototype}
+
+\subsection{Fucntion Prototype}
+
+Use {\tt prototype} to list the prototype of a function.  The only
+argument is the file name.
+
+\begin{verbatim}
+\prototype{strlen.h}
+\end{verbatim}
+
+The previous code will produce the following.
+
+\prototype{strlen.h}
+
+you can refer to a prototype by {\tt prototype:filename}.
+For example we can refer to the previous prototype by \verb+函式原型~\ref{prototype:strlen.h}+, which will produce 函式原型~\ref{prototype:strlen.h}.
 
 \end{CJK}
 \end{document}
