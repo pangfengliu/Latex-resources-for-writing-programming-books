@@ -128,6 +128,28 @@ The previous code will produce the following.
 Note that you can refer to a program listing by {\tt ex:filename}.
 For example you can refer to the previous example by \verb+標頭檔~\ref{header:complex.h}+, which will produce 標頭檔~\ref{header:complex.h}.
 
+\section{Phrase}
+
+\subsection{Header Files}
+
+Use {\tt phrase} to list a phrase.  The first argument is the name of
+the file storing the phrase, and the second argument is the caption.
+This package will use {\tt .p} for file with phrases.
+
+Note that I use phrase to explain key programming concepts.  A phrase
+is a code segment that are often used in a particular situation, much
+like a phrase in English.
+
+\begin{verbatim}
+\phrase{for}{{\tt for} 迴圈}
+\end{verbatim}
+
+The previous code will produce the following.
+
+\phrase{for}{{\tt for} 迴圈}
+
+Note that you can refer to a phrase listing by {\tt phr:for}.
+For example you can refer to the previous phrase by \verb+片語~\ref{phr:for}+, which will produce 片語~\ref{phr:for}.
 
 
 \end{CJK}
